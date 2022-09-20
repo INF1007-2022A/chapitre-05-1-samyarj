@@ -7,10 +7,9 @@ from typing import List
 # Écrire un programme qui lit un nombre et affiche sa valeur absolue, sans utiliser de fonction avancée
 def convert_to_absolute(number: float) -> float:
     if number < 0:
-        result = number/(-1)
-    else:
-        return number
-    return result
+        return (number/(-1))
+    return number # pas besoin de else statement
+    # return abs(number);
 
 # Dans un conte américain, huit petits canetons s'appellent respectivement : Jack, Kack, Lack, Mack, Nack, Oack, Pack et Qack.
 # Écrire un petit script qui génère tous ces noms à partir des deux chaînes suivantes : prefixes = 'JKLMNOPQ' et suffixe = 'ack'
