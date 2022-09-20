@@ -40,11 +40,26 @@ def prime_integer_summation() -> int:
 
 
 def factorial(number: int) -> int:
-    return 0
-
+    # n! = n(n-1)! ; 0! = 1
+    if number > 1 : # to avoid a stiaution where the result is 0
+        result = number * (number-1)
+        n = (number-2)
+        if n == 0: # 2! = 2
+            return result
+        else: # for every other case
+            while n > 1:
+                result *= n
+                n -= 1
+            return result
+    else:
+        return number
 
 def use_continue() -> None:
-    pass
+    for i in range(1, 11):
+        if i == 5:
+            continue # or pass
+        else:
+            print(i)
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
