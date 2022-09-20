@@ -23,9 +23,20 @@ def use_prefixes() -> List[str]:
         names.append(generated_name)
     return names
 
-
+#Calculer la somme des 100 premiers nombres entiers premiers excluant le nombre 1
 def prime_integer_summation() -> int:
-    return 0
+    p = list() # not prime
+    prime_numbers = []
+    for i in range(2, 101): # domain = [2, 100]
+        for k in range(2, i):
+            if i % k == 0:
+                p.append(i)
+        if i not in p:
+            prime_numbers.append(i)
+    result = int() #
+    for j in prime_numbers:
+        result += j
+    return result
 
 
 def factorial(number: int) -> int:
