@@ -61,22 +61,26 @@ def use_continue() -> None:
         else:
             print(i)
 
-
+# continue documentation : https://docs.python.org/3.10/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    accept = []
-    result = bool()
-    for group in groups:
-        if len(group) <= 3 or len(group) > 10:
-            result = False
-        if 50 in group and max(group) > 70:
-            result = False
-        if min(group) < 18:
-            result = False
+    accept = list()
+    # analyse criteria group by group
+    for group in groups: # each group is an iteration
+        # size criteria; separate from age criteria
+        if (len(group) <= 3) or (len(group) > 10):
+            accept.append(False)
+            continue
+        # age criteria
         if 25 in group:
-            result = True
-
-        accept.append(result)
-
+            accept.append(True)
+            continue # go to next iteration as soon as you see 25
+        if min(group) < 18:
+            accept.append(False)
+            continue
+        if (50 in group) and (max(group) > 70):
+            accept.append(False)
+            continue
+        accept.append(True)
     return accept
 
 
