@@ -4,15 +4,24 @@
 
 from typing import List
 
-
+# Écrire un programme qui lit un nombre et affiche sa valeur absolue, sans utiliser de fonction avancée
 def convert_to_absolute(number: float) -> float:
-    return 0
+    if number < 0:
+        result = number/(-1)
+    else:
+        return number
+    return result
 
+# Dans un conte américain, huit petits canetons s'appellent respectivement : Jack, Kack, Lack, Mack, Nack, Oack, Pack et Qack.
+# Écrire un petit script qui génère tous ces noms à partir des deux chaînes suivantes : prefixes = 'JKLMNOPQ' et suffixe = 'ack'
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
-
-    return [""]
+    names = list() # return value
+    for letter in prefixes:
+        generated_name = letter + suffixe
+        names.append(generated_name)
+    return names
 
 
 def prime_integer_summation() -> int:
