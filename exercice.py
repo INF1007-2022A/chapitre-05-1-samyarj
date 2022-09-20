@@ -26,12 +26,15 @@ def use_prefixes() -> List[str]:
 def prime_integer_summation() -> int:
     p = list() # not prime
     prime_numbers = []
+    # trouver les nombres primes
     for i in range(2, 101): # domain = [2, 100]
         for k in range(2, i):
             if i % k == 0:
                 p.append(i)
         if i not in p:
             prime_numbers.append(i)
+
+    # faire la somme
     result = int() #
     for j in prime_numbers:
         result += j
