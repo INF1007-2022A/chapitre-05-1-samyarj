@@ -63,7 +63,21 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    accept = []
+    result = bool()
+    for group in groups:
+        if len(group) <= 3 or len(group) > 10:
+            result = False
+        if 50 in group and max(group) > 70:
+            result = False
+        if min(group) < 18:
+            result = False
+        if 25 in group:
+            result = True
+
+        accept.append(result)
+
+    return accept
 
 
 def main() -> None:
